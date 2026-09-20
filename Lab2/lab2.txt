@@ -1,0 +1,180 @@
+Script started on 2026-09-17 10:12:11-04:00 [TERM="xterm" TTY="/dev/pts/4" COLUMNS="103" LINES="63"]
+hdoop@ograzier:~/notes$ ls $HADOOP_HOME/etc/hadoop/
+ls: cannot access '/home/hdoop/Desktop/hadoop/hadoop-3.5.0/etc/hadoop/': No such file or directory
+hdoop@ograzier:~/notes$ ^C
+hdoop@ograzier:~/notes$ echo "HADOOP_HOME is: '$HADOOP_HOME'"
+HADOOP_HOME is: '/home/hdoop/Desktop/hadoop/hadoop-3.5.0'
+hdoop@ograzier:~/notes$ ls
+lab2.txt
+hdoop@ograzier:~/notes$ find ~ -maxdepth 3 -type d -name "hadoop-3.*" 2>/dev/null
+hdoop@ograzier:~/notes$ find ~ -maxdepth 3 -type d -name "hadoop-3.*" 2>/dev/null
+hdoop@ograzier:~/notes$ nano ~/.bashrc
+hdoop@ograzier:~/notes$ source ~/.bashrc
+hdoop@ograzier:~/notes$ ls -l "$HADOOP_HOME/etc/hadoop"
+ls: cannot access '/home/hdoop/Desktop/hadoop/hadoop-3.5.0/etc/hadoop': No such file or directory
+hdoop@ograzier:~/notes$ mkdir -p ~/Desktop/hadoop
+hdoop@ograzier:~/Desktop/hadoop$ wget https://downloads.apache.org/hadoop/common/hadoop-3.5.0/hadoop-3.5.0.tar.gz
+tar -xzf hadoop-3.5.0.tar.gzoop$ wget https://downloads.apache.org/hadoop/common/hadoop-3.5.0/hadoop-3.5.0.tar.gz
+--2026-09-17 10:17:15--  https://downloads.apache.org/hadoop/common/hadoop-3.5.0/hadoop-3.5.0.tar.gz
+Resolving downloads.apache.org (downloads.apache.org)... 2a01:4f9:2b:1cc2::2, 2a01:4f8:10a:39da::2, 88.99.208.237, ...
+Connecting to downloads.apache.org (downloads.apache.org)|2a01:4f9:2b:1cc2::2|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 581280703 (554M) [application/x-gzip]
+Saving to: ‘hadoop-3.5.0.tar.gz’
+
+hadoop-3.5.0.tar.gz       100%[====================================>] 554.35M  27.5MB/s    in 26s     
+
+2026-09-17 10:17:41 (21.5 MB/s) - ‘hadoop-3.5.0.tar.gz’ saved [581280703/581280703]
+
+hdoop@ograzier:~/Desktop/hadoop$ ls -d hadoop-3.5.0
+hadoop-3.5.0
+hdoop@ograzier:~/Desktop/hadoop$ mkdir -p ~/Desktop/hadoop/tmpdata
+mkdir -p ~/Desktop/hadoop/dfsdata/namenode
+mkdir -p ~/Desktop/hadoop/dfsdata/datanode
+hdoop@ograzier:~/Desktop/hadoop$ ls -l "$HADOOP_HOME/etc/hadoop"
+total 184
+-rw-r--r-- 1 hdoop hdoop  9213 Mar 24 13:14 capacity-scheduler.xml
+-rw-r--r-- 1 hdoop hdoop  1335 Mar 24 13:15 configuration.xsl
+-rw-r--r-- 1 hdoop hdoop  2567 Mar 24 13:14 container-executor.cfg
+-rw-r--r-- 1 hdoop hdoop   774 Mar 24 12:57 core-site.xml
+-rw-r--r-- 1 hdoop hdoop  3999 Mar 24 12:57 hadoop-env.cmd
+-rw-r--r-- 1 hdoop hdoop 16786 Mar 24 13:31 hadoop-env.sh
+-rw-r--r-- 1 hdoop hdoop  3321 Mar 24 12:57 hadoop-metrics2.properties
+-rw-r--r-- 1 hdoop hdoop 14007 Mar 24 12:57 hadoop-policy.xml
+-rw-r--r-- 1 hdoop hdoop  3414 Mar 24 12:57 hadoop-user-functions.sh.example
+-rw-r--r-- 1 hdoop hdoop   683 Mar 24 13:07 hdfs-rbf-site.xml
+-rw-r--r-- 1 hdoop hdoop   775 Mar 24 12:59 hdfs-site.xml
+-rw-r--r-- 1 hdoop hdoop  1484 Mar 24 13:00 httpfs-env.sh
+-rw-r--r-- 1 hdoop hdoop  1657 Mar 24 13:00 httpfs-log4j.properties
+-rw-r--r-- 1 hdoop hdoop   620 Mar 24 13:00 httpfs-site.xml
+-rw-r--r-- 1 hdoop hdoop  3518 Mar 24 12:57 kms-acls.xml
+-rw-r--r-- 1 hdoop hdoop  1351 Mar 24 12:57 kms-env.sh
+-rw-r--r-- 1 hdoop hdoop  1771 Mar 24 12:57 kms-log4j.properties
+-rw-r--r-- 1 hdoop hdoop   682 Mar 24 12:57 kms-site.xml
+-rw-r--r-- 1 hdoop hdoop 14451 Mar 24 12:57 log4j.properties
+-rw-r--r-- 1 hdoop hdoop   951 Mar 24 13:15 mapred-env.cmd
+-rw-r--r-- 1 hdoop hdoop  1764 Mar 24 13:15 mapred-env.sh
+-rw-r--r-- 1 hdoop hdoop  4113 Mar 24 13:15 mapred-queues.xml.template
+-rw-r--r-- 1 hdoop hdoop   758 Mar 24 13:15 mapred-site.xml
+drwxr-xr-x 2 hdoop hdoop  4096 Mar 24 12:57 shellprofile.d
+-rw-r--r-- 1 hdoop hdoop  2316 Mar 24 12:57 ssl-client.xml.example
+-rw-r--r-- 1 hdoop hdoop  3766 Mar 24 12:57 ssl-server.xml.example
+-rw-r--r-- 1 hdoop hdoop  2681 Mar 24 12:59 user_ec_policies.xml.template
+-rw-r--r-- 1 hdoop hdoop    10 Mar 24 12:57 workers
+-rw-r--r-- 1 hdoop hdoop  2250 Mar 24 13:14 yarn-env.cmd
+-rw-r--r-- 1 hdoop hdoop  7095 Mar 24 13:14 yarn-env.sh
+-rw-r--r-- 1 hdoop hdoop   690 Mar 24 13:14 yarn-site.xml
+-rw-r--r-- 1 hdoop hdoop  2591 Mar 24 13:14 yarnservice-log4j.properties
+hdoop@ograzier:~/Desktop/hadoop$ ^C
+hdoop@ograzier:~/Desktop/hadoop$ cd $HADOOP_HOME/etc/hadoop
+nano hadoop-env.sh
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ nano core-site.xml
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ grep -A 8 "<configuration>"
+^C
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ grep -A 8 "<configuration>" core-site.xml
+<configuration>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/home/hdoop/Desktop/hadoop/tmpdata</value>
+    </property>
+    <property>
+        <name>fs.default.name</name>
+        <value>hdfs://127.0.0.1:9000</value>
+    </property>
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ nano core-site.xml
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ nano hdfs-site.xml
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ grep -A 12 "<configuration>" hdfs-site.xml
+<configuration>
+    <property>
+        <name>dfs.data.dir</name>
+        <value>/home/hdoop/Desktop/hadoop/dfsdata/namenode</value>
+    </property>
+    <property>
+        <name>dfs.data.dir</name>
+        <value>/home/hdoop/Desktop/hadoop/dfsdata/datanode</value>
+    </property>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ nano mapred-site.xml
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ grep -A 4 "<configuration>" mapred-site.xml
+<configuration>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ nano yarn-site.xml
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ grep -A 20 "<configuration>" yarn-site.xml
+<configuration>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>127.0.0.1</value>
+    </property>
+    <property>
+        <name>yarn.acl.enable</name>
+        <value>0</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.env-whitelist</name>
+        <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PERPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+    </property>
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ ^C
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ hdfs namenode -format
+WARNING: /home/hdoop/Desktop/hadoop/hadoop-3.5.0/logs does not exist. Creating.
+Error: A JNI error has occurred, please check your installation and try again
+Exception in thread "main" java.lang.UnsupportedClassVersionError: org/apache/hadoop/hdfs/server/namenode/NameNode has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+        at java.lang.ClassLoader.defineClass1(Native Method)
+        at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+        at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+        at java.net.URLClassLoader.defineClass(URLClassLoader.java:473)
+        at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ sudo apt update && sudo apt install -y openjdk-17-jdk
+[sudo: authenticate] Password:                   hadoop$ sudo apt update && sudo apt install -y openjdk-17-jdk
+Get:1 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+Hit:2 http://us.archive.ubuntu.com/ubuntu resolute InRelease                                          
+Get:3 http://us.archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]                     
+Get:4 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [478 kB]            
+Get:5 http://security.ubuntu.com/ubuntu resolute-security/main Translation-en [113 kB]               
+Get:6 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [173 kB] 
+Hit:7 http://us.archive.ubuntu.com/ubuntu resolute-backports InRelease                               
+Get:8 https://pkgs.tailscale.com/stable/ubuntu resolute InRelease    
+Get:9 http://us.archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [612 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [294 kB]
+Fetched 1,951 kB in 1s (3,172 kB/s)                        
+24 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Installing:                     
+  openjdk-17-jdk
+
+Installing dependencies:
+  openjdk-17-jdk-headless  openjdk-17-jre  openjdk-17-jre-headless
+
+Suggested packages:
+Progress: [ 94%] [████████████████████████████████████████████████████████████████████████████▏    ] ] 
+  openjdk-17-source  fonts-ipafont-gothic  fonts-wqy-microhei    fonts-indic
+
+Summary:
+  Upgrading: 0, Installing: 4, Removing: 0, Not Upgrading: 24
+  Download size: 122 MB
+  Space needed: 276 MB / 168 GB available
+
+Get:1 http://us.archive.ubuntu.com/ubuntu resolute-updates/universe amd64 openjdk-17-jre-headless amd64 17.0.20+8-1~26.04 [48.1 MB]
+Get:2 http://us.archive.ubuntu.com/ubuntu resolute-updates/universe amd64 openjdk-17-jre amd64 17.0.20+8-1~26.04 [229 kB]
+hdoop@ograzier:~/Desktop/hadoop/hadoop-3.5.0/etc/hadoop$ grep -A 2 "webapp.address" yarn-site.xml amd64 17.0.20+8-1~26.04 [71.8 MB]
+        <name>yarn.resourcemanager.webapp.address</name>
+        <value>0.0.0.0:8088</value>
